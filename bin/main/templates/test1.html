@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Thymeleaf</h1>
+	<p th:text="${new java.util.Date().toString()}"></p>
+	
+	<h3>ユーティリティオブジェクト</h3>
+	<p th:text="${#dates.format(new java.util.Date(), 'dd/MMM/yyyy HH:mm')}">
+	<p th:text="${#numbers.formatInteger(1234,7)}"></p>
+	<p th:text="${#strings.toUpperCase('Welcom to spring')}"></p>
+	
+	<h3>パラメータ</h3>
+	<!-- <p th:text="'from parameter.. id=' + ${param.id[0] +' ,name=' + param.name[0]}"></p> -->
+	<!-- クエリーテキストとして値を送信するとき、同じ名前の値を複数送る場合に対応できるようにするため -->
+	<!-- http://~~~~/?id=id1&id=id2 -->
+	
+	<h3>テキストリテラル</h3>
+	<p th:text="'one two three'"></p>
+	<p th:text=" 'one ' + 'two ' + 'three ' "></p>
+	
+	<h3>メッセージ式</h3>
+	<p th:text="#{content.title}"></p>
+	<p th:text="#{content.message}"></p>
+	
+	<h3>リンク式とhref</h3>
+	<p><a th:href="@{/link}">link</a></p>
+	
+</body>
+</html>

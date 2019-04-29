@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p th:text="${msg}"></p>
+	<table th:object="${object}">
+		<tr>
+			<th>ID</th>
+			<td th:text="*{id}"></td>
+		</tr>
+		<tr>
+			<th>name</th>
+			<td th:text="*{name}"></td>
+		</tr>
+		<tr>
+			<th>mail</th>
+			<td th:text="*{value}"></td>
+		</tr>
+	</table>
+	
+	<div th:object="${object}">
+		<p th:text="|my name is *{name}. mail address is *{value}.|"></p>
+	</div>
+	
+	<p th:text="${msg2}"></p>
+	<p th:utext="${msg2}"></p>
+	
+</body>
+</html>
