@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script th:inline="javascript">
+	function action(){
+		var val = document.getElementById("text1").value;
+		var res = parseInt(val * (( 100 + /*[[${tax}]]*/ ) / 100 ));
+		document.getElementById("msg").innerHTML = "include tax: " + res;
+	}
+</script>
+<body>
+	<h1 th:text="#{content.title}"></h1>
+	<p id="msg"></p>
+	<input type="text" id="text1" />
+	<button onclick="action()">click</button>
+	
+</body>
+</html>

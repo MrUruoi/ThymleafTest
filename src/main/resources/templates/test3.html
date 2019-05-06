@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="#{content.title}"></h1>
+	
+	<p th:text="${id} + ' is ' + (${check}?${trueVal}:${falseVal}) "></p>
+	
+	<p th:if="${check}" th:text="${id} + ' is ' + ${trueVal}"></p>
+	<p th:unless="${check}" th:text="${id} + ' is ' + ${falseVal}"></p>
+</body>
+</html>
